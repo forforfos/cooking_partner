@@ -26,7 +26,7 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url = `${process.env.REACT_APP_COOKMEISTER_URL}/search`
+    const url = `${process.env.REACT_APP_COOKMEISTER_URL}/recipes/search`
     const options = {
       method: "POST",
       headers: {
