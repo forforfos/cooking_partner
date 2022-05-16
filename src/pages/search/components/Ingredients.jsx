@@ -12,7 +12,7 @@ const Ingredients = ({ ingredients }) => {
   return (
     <IngredientsWrapper>
       {ingredients.map((ingredient) => (
-        <Ingredient>{ingredient.name}</Ingredient>
+        <Ingredient key={ingredient.id}>{ingredient.name}</Ingredient>
       ))}
     </IngredientsWrapper>
   );

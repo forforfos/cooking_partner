@@ -12,7 +12,7 @@ const Results = ({ recipes }) => {
   return (
     <RecipesWrapper>
       {recipes.map(recipe => (
-        <Recipe recipe={recipe} />
+        <Recipe key={recipe.id} recipe={recipe} />
       ))}
     </RecipesWrapper>
   )
