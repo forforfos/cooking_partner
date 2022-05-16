@@ -17,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "REACT_APP_COOKMEISTER_URL=http://localhost:3000 react-scripts start",
+    "start": "react-scripts start",
     "build": "REACT_APP_COOKMEISTER_URL=https://cookmeister.herokuapp.com react-scripts build",
     "test": "REACT_APP_COOKMEISTER_URL=http://test_url.com react-scripts test",
     "eject": "react-scripts eject"
