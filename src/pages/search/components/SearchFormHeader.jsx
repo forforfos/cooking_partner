@@ -6,6 +6,10 @@ const WelcomeMessage = styled('div')`
   font-size: 55px;
   margin: 20px 40px 0 0;
 
+  @media screen and (max-width: 943px) {
+    font-size: 40px;
+  }
+
   @media screen and (max-width: 420px) {
     font-size: 36px;
   }
@@ -19,6 +23,10 @@ const SubHeader = styled('div')`
 
   @media screen and (max-width: 420px) {
     font-size: 18px;
+  }
+
+  @media screen and (max-width: 696px) {
+    font-size: 16px;
   }
 `;
 

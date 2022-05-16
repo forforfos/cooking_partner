@@ -1,8 +1,8 @@
 import { useState } from "react";
-import MultipleValueTextInput from 'react-multivalue-text-input';
+import MultipleValueTextInput from "react-multivalue-text-input";
 import styled from "@emotion/styled";
 
-const Form = styled('form')`
+const Form = styled("form")`
   width: 470px;
   float: right;
   padding: 16px 42px;
@@ -43,7 +43,7 @@ const Form = styled('form')`
         background: #e8d8d8;
         box-shadow: 3px 3px 12px #333;
         text-align: left;
-        padding: 4px 20px
+        padding: 4px 20px;
       }
     }
   }
@@ -59,7 +59,7 @@ const Form = styled('form')`
   }
 `;
 
-const SubmitButton = styled('input')`
+const SubmitButton = styled("input")`
   width: 300px;
   height: 36px;
   text-align: center;
@@ -74,7 +74,7 @@ const SubmitButton = styled('input')`
   transition: all 0.3s;
 
   &:hover {
-    transform: scale(1.05)
+    transform: scale(1.05);
   }
 `;
 
@@ -83,7 +83,7 @@ const SearchForm = ({ setRecipes }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url = `${process.env.REACT_APP_COOKMEISTER_URL}/recipes/search`
+    const url = `${process.env.REACT_APP_COOKMEISTER_URL}/recipes/search`;
     const options = {
       method: "POST",
       headers: {
@@ -96,22 +96,26 @@ const SearchForm = ({ setRecipes }) => {
     };
 
     fetch(url, options)
-      .then(response => response.json())
-      .then(data => setRecipes(data));
-  }
+      .then((response) => response.json())
+      .then((data) => setRecipes(data));
+  };
 
   const handleIngredientAddition = (item) => {
-    setIngredients([ ...ingredients, item ])
-  }
+    setIngredients([...ingredients, item]);
+  };
 
   const handleIngredientDeletion = (item) => {
-    setIngredients(ingredients.filter(ingredient => ingredient !== item))
-  }
+    setIngredients(ingredients.filter((ingredient) => ingredient !== item));
+  };
 
   return (
     <Form onSubmit={handleSubmit}>
-      <MultipleValueTextInput onItemDeleted={handleIngredientDeletion} onItemAdded={handleIngredientAddition}></MultipleValueTextInput>
-      <SubmitButton type="submit" value="Find Recipes"/>
+      <MultipleValueTextInput
+        name="ingredients"
+        onItemDeleted={handleIngredientDeletion}
+        onItemAdded={handleIngredientAddition}
+      />
+      <SubmitButton data-testid="submitButton" type="submit" value="Find Recipes" />
     </Form>
   );
 };
