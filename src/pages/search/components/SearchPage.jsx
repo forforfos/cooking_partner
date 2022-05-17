@@ -1,11 +1,11 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import SearchForm from "./SearchForm";
-import headerImage from "../../../assets/flatlay.jpg"
+import headerImage from "../../../assets/flatlay.jpg";
 import SearchFormHeader from "./SearchFormHeader";
 import Results from "./Results";
 
-const HeaderImage = styled('div')`
+const HeaderImage = styled("div")`
   width: 100%;
   height: 600px;
   background-image: url(${headerImage});
@@ -27,9 +27,9 @@ const SearchPage = () => {
         <SearchFormHeader />
         <SearchForm setRecipes={setRecipes} />
       </HeaderImage>
-      { recipes && <Results recipes={recipes} /> }
+      {recipes && <Results recipes={recipes} />}
     </>
-  )
+  );
 };
 
 export default SearchPage;
