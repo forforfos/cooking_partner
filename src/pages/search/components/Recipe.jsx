@@ -9,11 +9,7 @@ const Card = styled("div")`
   transition: all 0.3s;
 
   &:hover {
-    transform: scale(1.1);
-
-    & .card-image {
-      height: 220px;
-    }
+    transform: scale(1.15);
   }
 
   @media screen and (min-width: 581px) and (max-width: 912px) {
